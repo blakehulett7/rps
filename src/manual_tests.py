@@ -1,4 +1,3 @@
-import pygame
 from logic import Game_Master
 
 

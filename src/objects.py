@@ -3,14 +3,15 @@ import math
 
 
 class ball:
-    def __init__(self, center, radius, color, screen):
+    def __init__(self, center, velocity, radius, color, screen):
         self.center = center
+        self.velocity = velocity
         self.radius = radius
         self.color = color
         self.screen = screen
 
     def __repr__(self):
-        return f"{self.color} ball at {self.center} with radius {self.radius}"
+        return f"{self.color} ball at {self.center} with radius {self.radius} and velocity {self.velocity}"
 
     def draw(self):
         pygame.draw.circle(self.screen, self.color, self.center, self.radius)

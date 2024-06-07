@@ -8,7 +8,8 @@ def main():
     screen = pygame.display.set_mode(size=(screen_x, screen_y))
 
     gm = Game_Master(screen, 3)
-    print(gm.initialize_balls(5, 50, "white"))
+    gm.initialize_balls(5, 50, "white", 25)
+    print(gm.balls)
 
 
 main()

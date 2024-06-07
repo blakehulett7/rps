@@ -11,7 +11,7 @@ def main():
     running = True
 
     gm = Game_Master(screen, 3)
-    gm.initialize_balls(5, 25, 1)
+    gm.initialize_balls(30, 25, 1)
     while running:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -19,6 +19,7 @@ def main():
         screen.fill("black")
         gm.move_balls()
         gm.wall_collisions()
+        gm.ball_collisions()
         gm.draw_balls()
         pygame.display.flip()
 

@@ -39,3 +39,17 @@ class Game_Master:
     def wall_collisions(self):
         for current_ball in self.balls:
             current_ball.wall_bounce()
+
+    def ball_collisions(self):
+        for current_ball in self.balls:
+            for target_ball in self.balls:
+                if current_ball.collision_check(target_ball):
+                    self.collision_outcome(current_ball, target_ball)
+                    break
+
+    def collision_outcome(self, ball_1, ball_2):
+        if (
+            (ball_1.color == "red" and ball_2.color == "white")
+            or (ball_1.color == "white" and ball_2.color == "blue")
+                or (ball_1.color == "blue" and ball_2.color == "red")):
+            self.balls.remove(ball_2)

@@ -1,4 +1,5 @@
 import pygame
+from logic import Game_Master
 
 
 def main():
@@ -9,10 +10,15 @@ def main():
     clock = pygame.time.Clock()
     running = True
 
+    gm = Game_Master(screen)
+    gm.initialize_balls(5, 50, "white")
     while running:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
+        screen.fill("black")
+        gm.draw_balls()
+        pygame.display.flip()
 
 
 main()

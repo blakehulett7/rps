@@ -9,8 +9,10 @@ class Game_Master:
 
     def initialize_balls(self, number, radius, color):
         for i in range(number):
-            random_x = random.randint(0, self.screen.get_width())
-            random_y = random.randint(0, self.screen.get_height())
+            random_x = random.randint(
+                0, self.screen.get_width() - (radius * 2))
+            random_y = random.randint(
+                0, self.screen.get_height() - (radius * 2))
             center = (random_x, random_y)
             current_ball = ball(center, radius, color, self.screen)
             self.balls.append(current_ball)

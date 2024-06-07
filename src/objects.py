@@ -1,4 +1,5 @@
 import pygame
+import math
 
 
 class ball:
@@ -13,3 +14,9 @@ class ball:
 
     def draw(self):
         pygame.draw.circle(self.screen, self.color, self.center, self.radius)
+
+    def collision_check(self, target_ball):
+        a_sq = (self.center[0] - target_ball.center[0]) ** 2
+        b_sq = (self.center[1] - target_ball.center[1]) ** 2
+        distance = math.sqrt(a_sq + b_sq)
+        return distance < (self.radius + target_ball.radius)

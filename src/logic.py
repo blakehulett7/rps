@@ -3,9 +3,10 @@ from objects import ball
 
 
 class Game_Master:
-    def __init__(self, screen):
+    def __init__(self, screen, seed=None):
         self.screen = screen
         self.balls = []
+        random.seed(seed)
 
     def initialize_balls(self, number, radius, color):
         for i in range(number):

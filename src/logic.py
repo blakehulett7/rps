@@ -30,3 +30,7 @@ class Game_Master:
     def draw_balls(self):
         for current_ball in self.balls:
             current_ball.draw()
+
+    def move_balls(self):
+        for current_ball in self.balls:
+            current_ball.move()

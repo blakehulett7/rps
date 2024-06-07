@@ -16,6 +16,13 @@ class ball:
     def draw(self):
         pygame.draw.circle(self.screen, self.color, self.center, self.radius)
 
+    def move(self):
+        x = self.center[0]
+        y = self.center[1]
+        x += self.velocity[0]
+        y += self.velocity[1]
+        self.center = (x, y)
+
     def collision_check(self, target_ball):
         a_sq = (self.center[0] - target_ball.center[0]) ** 2
         b_sq = (self.center[1] - target_ball.center[1]) ** 2

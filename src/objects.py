@@ -24,7 +24,24 @@ class ball:
         self.center = (x, y)
 
     def collision_check(self, target_ball):
+        if self == target_ball:
+            return False
         a_sq = (self.center[0] - target_ball.center[0]) ** 2
         b_sq = (self.center[1] - target_ball.center[1]) ** 2
         distance = math.sqrt(a_sq + b_sq)
         return distance < (self.radius + target_ball.radius)
+
+    def wall_bounce(self):
+        x = self.center[0]
+        y = self.center[1]
+        vel_x = self.velocity[0]
+        vel_y = self.velocity[1]
+        if x <= self.radius and vel_x < 0:
+            vel_x *= -1
+        if y <= self.radius and vel_y < 0:
+            vel_y *= -1
+        if x >= self.screen.get_width() - self.radius and vel_x > 0:
+            vel_x *= -1
+        if y >= self.screen.get_height() - self.radius and vel_y > 0:
+            vel_y *= -1
+        self.velocity = (vel_x, vel_y)

@@ -18,6 +18,7 @@ def main():
                 running = False
         screen.fill("black")
         gm.move_balls()
+        gm.wall_collisions()
         gm.draw_balls()
         pygame.display.flip()
 

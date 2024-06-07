@@ -34,3 +34,7 @@ class Game_Master:
     def move_balls(self):
         for current_ball in self.balls:
             current_ball.move()
+
+    def wall_collisions(self):
+        for current_ball in self.balls:
+            current_ball.wall_bounce()

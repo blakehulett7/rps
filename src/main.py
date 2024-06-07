@@ -10,7 +10,7 @@ def main():
     clock = pygame.time.Clock()
     running = True
 
-    gm = Game_Master(screen, 3)
+    gm = Game_Master(screen)
     gm.initialize_balls(30, 25, 1)
     while running:
         for event in pygame.event.get():

@@ -8,7 +8,7 @@ class Game_Master:
         self.balls = []
         random.seed(seed)
 
-    def initialize_balls(self, number, radius, color, velocity):
+    def initialize_balls(self, number, radius, velocity):
         while len(self.balls) != number:
             random_x = random.randint(
                 radius, self.screen.get_width() - (radius))
@@ -17,6 +17,7 @@ class Game_Master:
             center = (random_x, random_y)
             v = (random.choice([-1, 1]) * velocity,
                  random.choice([-1, 1]) * velocity)
+            color = random.choice(["red", "white", "blue"])
             current_ball = ball(center, v, radius, color, self.screen)
             if not self.collision_check(current_ball):
                 self.balls.append(current_ball)

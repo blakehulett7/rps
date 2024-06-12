@@ -9,6 +9,7 @@ class ball:
         self.radius = radius
         self.color = color
         self.screen = screen
+        self.counter = 0
 
     def __repr__(self):
         return f"{self.color} ball at {self.center} with radius {self.radius} and velocity {self.velocity}"

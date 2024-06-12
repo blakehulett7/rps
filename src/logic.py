@@ -53,3 +53,18 @@ class Game_Master:
             or (ball_1.color == "white" and ball_2.color == "blue")
                 or (ball_1.color == "blue" and ball_2.color == "red")):
             self.balls.remove(ball_2)
+        """
+        if ball_1.color == ball_2.color:
+            ball_1.counter += 1
+        if ball_1.counter == 700:
+            ball_1.counter = 0
+            random_x = random.randint(
+                ball_1.radius, self.screen.get_width() - (ball_1.radius))
+            random_y = random.randint(
+                ball_2.radius, self.screen.get_height() - (ball_2.radius))
+            center = (random_x, random_y)
+            v = (random.choice([-1, 1]) * ball_1.velocity[0],
+                 random.choice([-1, 1]) * ball_2.velocity[1])
+            self.balls.append(ball(center, v, ball_1.radius,
+                              ball_2.color, self.screen))
+        """
